@@ -436,8 +436,8 @@ static void batteryChargeEffect(uint8_t buffer[][3], bool reset)
 
   for (i = 0; i < NBR_LEDS; i++) {
     buffer[i][0] = LIMIT(LINSCALE(emptyCharge, fullCharge, solidRed, 0, vbat)); // Red (emtpy)
-    buffer[i][1] = 0; // Green
-    buffer[i][2] = LIMIT(LINSCALE(emptyCharge, fullCharge, 0, solidBlue, vbat)); // Blue (charged)
+    buffer[i][1] = LIMIT(LINSCALE(emptyCharge, fullCharge, 0, solidGreen, vbat)); // Green
+    buffer[i][2] = 0; // Blue
   }
 }
 
